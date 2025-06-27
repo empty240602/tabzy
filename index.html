@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="src/tabzy.css">
+</head>
+
+<body>
+
+    <!-- container -->
+    <ul id="tabs">
+        <li class="tabzy--active">
+            <a href="#tab1">Tab 1</a>
+        </li>
+
+        <li>
+            <a href="#tab2">Tab 2</a>
+        </li>
+
+        <li>
+            <a href="#tab3">Tab 3</a>
+        </li>
+    </ul>
+
+    <!-- Pannels -->
+    <div id="tab1">
+        tab1 content
+    </div>
+
+    <div id="tab2">
+        tab2 content
+    </div>
+
+    <div id="tab3">
+        tab3 content
+    </div>
+
+    <ul id="tabs2">
+        <li class="tabzy--active">
+            <a href="#tabA">Tab A</a>
+        </li>
+
+        <li>
+            <a href="#tabB">Tab B</a>
+        </li>
+
+        <li>
+            <a href="#tabC">Tab C</a>
+        </li>
+    </ul>
+
+    <!-- Pannels -->
+    <div id="tabA">
+        tabA content
+    </div>
+
+    <div id="tabB">
+        tabB content
+    </div>
+
+    <div id="tabC">
+        tabC content
+    </div>
+
+    <script src="./src/tabzy.js"></script>
+    <script>
+        const tabs = new Tabzy("#tabs", {
+            remember: true,
+            onChange: (data) => {
+                // data.tab, data.panel
+                console.log(data);
+
+            }
+        });
+
+        const tabs2 = new Tabzy("#tabs2", {
+            remember: true
+        }); 
+    </script>
+</body>
+
+</html>
